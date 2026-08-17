@@ -61,3 +61,38 @@ greater = lambda x: x > 40
 print("Add Grace Marks:", process_marks(marks, add))
 print("Double Marks:", process_marks(marks, double))
 print("Greater than 40:", process_marks(marks, greater))
+'''
+3. Create a function process_order(price, discount_function).
+Pass different lambda functions to calculate:
+* 10% discount
+* 20% discount
+* ₹100 flat discount
+Create two decorators:
+* order_logger → logs the order processing
+* payment_check → prints "Payment verification completed"
+Apply both decorators to the function.'''
+
+def order_logger(func):
+    def wrapper(*args,**kwargs):
+        print("logs the order processing")
+        res=func(*args,**kwargs)
+        print("order completed")
+        return res
+    return wrapper
+def payment_check(func):
+    def wrapper(*args,**kwargs):
+        result=func(*args,**kwargs)
+        print("Payment verification completed")
+        return result
+    return wrapper
+@order_logger
+@payment_check
+def process_order(price,discont_funct):
+    return list(map(discont_funct,price))
+price=[100,500,300,200,250]
+dis1=lambda x:x-(x*0.10)
+dis2=lambda x:x-(x*0.20)
+dis3=lambda x:x-100
+print(process_order(price,dis1))
+print(process_order(price,dis2))
+print(process_order(price,dis3))
