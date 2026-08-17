@@ -242,3 +242,29 @@ def order_log(func):
 def place_order():
     print("order placed successfully")
 place_order()
+
+#seperate question
+def log_deco(func):
+    def wrap(*args):
+        print("values",args)
+        result=func(*args)
+        print(result)
+        return result
+    return wrap
+def greater_first(func):
+    def wrap(a,b):
+        if a<b:
+            a,b=b,a
+        return func(a,b)
+    return wrap
+@log_deco
+@greater_first
+def sub(a,b):
+    return a-b
+result=sub(2,4)
+print(result)
+@log_deco
+def add(a,b,c):
+    return a+b+c
+result1=add(1,2,3)
+print(result1)
