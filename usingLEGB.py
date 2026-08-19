@@ -53,6 +53,7 @@ def authentication(func):
             print("Invalid credentials")
             return None
     return wrapper
+@authentication
 def withdraw(username,pin,amount):
     global balance
     if amount>=balance:
@@ -61,3 +62,9 @@ def withdraw(username,pin,amount):
     else:
         print("Insufficient balance!")
 withdraw("admin","1234",int(input()))
+
+'''An online examination system has a function start_exam(username, password, exam_name). Create a decorator
+login_required to authenticate the student and another decorator track_attempt to count how many times the exam
+is started. If authentication is successful, display "Exam started for <username>" along with the exam name. Finally,
+display the total number of exam attempts.'''
+
