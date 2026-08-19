@@ -39,3 +39,25 @@ logins("trinesh","trinesh@1234")
 logins("nikhil","nikhil@1234")
 print("total no of attempts: ",attempts)
 
+'''An ATM system has a function withdraw(username, pin, amount). Create a decorator authenticate that checks whether
+the username is "admin" and PIN is "1234". If authentication is successful, execute the function; otherwise, display
+"Invalid credentials". The function should maintain a global balance = 10000, deduct the amount if sufficient balance
+exists, and display the remaining balance.'''
+
+balance=10000
+def authentication(func):
+    def wrapper(username,pin,amount):
+        if username=="admin" and pin=="1234":
+            return func(username,pin,amount)
+        else:
+            print("Invalid credentials")
+            return None
+    return wrapper
+def withdraw(username,pin,amount):
+    global balance
+    if amount>=balance:
+        balance-=amount
+        print(f"Withdrawal successful! Remaining balance: {balance}")
+    else:
+        print("Insufficient balance!")
+withdraw("admin","1234",int(input()))
