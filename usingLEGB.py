@@ -48,6 +48,7 @@ balance=10000
 def authentication(func):
     def wrapper(username,pin,amount):
         if username=="admin" and pin=="1234":
+            print("authentication successful")
             return func(username,pin,amount)
         else:
             print("Invalid credentials")
@@ -56,7 +57,7 @@ def authentication(func):
 @authentication
 def withdraw(username,pin,amount):
     global balance
-    if amount>=balance:
+    if amount<=balance:
         balance-=amount
         print(f"Withdrawal successful! Remaining balance: {balance}")
     else:
@@ -68,3 +69,20 @@ login_required to authenticate the student and another decorator track_attempt t
 is started. If authentication is successful, display "Exam started for <username>" along with the exam name. Finally,
 display the total number of exam attempts.'''
 
+attempts=0
+def authenticate(func):
+    def wrapper(username,password,exam_name):
+        if username=="nithin" and password=="nithin@1234":
+            global attempts
+            attempts+=1
+            print("authentication successful")
+            return func(username,password,exam_name)
+        else:
+            print("invalid authentication")
+            return None
+    return wrapper
+@authenticate
+def start_exam(username,password,exam_name):
+    print(f"Total exam attempts: {attempts}")
+    print(f"Exam started for {username} - {exam_name}")
+start_exam("nithin", "nithin@1234", "Python Basics")
