@@ -86,3 +86,37 @@ def start_exam(username,password,exam_name):
     print(f"Total exam attempts: {attempts}")
     print(f"Exam started for {username} - {exam_name}")
 start_exam("nithin", "nithin@1234", "Python Basics")
+
+username="nithin"
+password="nithin@123"
+usa=0
+sa=0
+def dec(func):
+    def wrapper(*args,**kwargs):
+        print("Application start")
+        func(*args,**kwargs)
+    return wrapper
+
+@dec
+def login(username1,password1):
+    global sa,usa
+    if(username1==username and password1==password):
+        sa += 1
+        print("Login Successful")
+    elif(username1!=username):
+        usa += 1
+        if(usa<=3):
+            x = input("Enter username:")
+            login(x,password1)
+        else:
+            print("No more Attempts")
+    else:
+        usa += 1
+        if(usa<=3):
+            x = input("Enter your password:")
+            login(username1,x)
+        else:
+            print("No more attempts")
+login(input(),input())
+print(sa)
+print(usa)
