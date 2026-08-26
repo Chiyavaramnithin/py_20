@@ -23,8 +23,15 @@ print(phone.count) # for identifing the total no of phone
 
 class A:
     x=20
+    c=0
     def __init__(self):
         self.y=120
         self.x=40
         self.a=140
+        A.c+=1
 obj=A()
+print(obj.y)
+print(obj.y)
+print(obj.y)
+print(obj.y)
+print(obj.y)
