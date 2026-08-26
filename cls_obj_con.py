@@ -30,8 +30,10 @@ class A:
         self.a=140
         A.c+=1
 obj=A()
+obj2=A()
 print(obj.y)
 print(obj.y)
 print(obj.y)
 print(obj.y)
 print(obj.y)
+print(obj2.c)
