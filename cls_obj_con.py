@@ -37,3 +37,7 @@ print(obj.a)
 print(obj.y)
 print(obj.y)
 print(obj2.c)
+
+class A:
+    def __init__(self):
+        
