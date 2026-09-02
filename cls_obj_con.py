@@ -40,4 +40,14 @@ print(obj2.c)
 
 class A:
     def __init__(self):
-        
+        age=int(input("enter the age"))
+        name=input("enter the name")
+        self.age=age
+        self.name=name
+        if isinstance(age,int):
+            print(age)
+        elif isinstance(name,str):
+            print(name)
+        else:
+            print("Invalid")
+p=A()
