@@ -51,3 +51,17 @@ class A:
         else:
             print("Invalid")
 p=A()
+
+class A:
+    def __init(self):
+        age=int(input("enter the age"))
+        name=input("enter the name")
+        self.age=age
+        self.name=name
+        if type(age)==int:
+            print(age)
+        elif type(name)==str:
+            print(name)
+        else:
+            print("Invalid")
+p=A(22,"nithin")
