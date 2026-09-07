@@ -141,4 +141,13 @@ class A:
             print("Invalid")
 p=A()
 
-
+class A:
+    def m1(self):
+        print("hi")
+        print(self)
+obj1=A()
+print(obj1)
+obj1.m1()
+obj2=A()
+print(obj2)
+obj2.m1()
