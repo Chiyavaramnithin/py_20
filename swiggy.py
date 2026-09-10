@@ -88,7 +88,6 @@ def calculate_score(base_score=0,*bonus_points,**penalties):
     total_bonus=sum(bonus_points)
     total_penalty=sum(penalties.values())
     final_score=base_score+total_bonus-total_penalty
-
     print("base score:",base_score)
     for bonus_point in bonus_points:
         print("bonus points:",bonus_point)
