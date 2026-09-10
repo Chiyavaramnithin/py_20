@@ -239,3 +239,44 @@ elif acno == acc2.accno:
         print("Incorrect Pin")
 else:
     print("Invalid Account Number")
+
+'''A company wants to generate basic salary information when employee objects are created. Create a class Employee 
+with class variables company = "TechCorp" and employee_count = 0. The constructor should accept name, department, 
+salary, and experience. Validate that salary and experience are not negative. Based on experience, calculate a bonus
+inside the constructor: employees with more than 5 years receive 15%, employees with 3–5 years receive 10%, and
+employees with less than 3 years receive 5%. Create an instance dictionary pay_details containing the employee’s name,
+salary, experience, bonus, and final salary. Generate an employee ID using employee_count. Create three employee 
+objects and display their __dict__.'''
+
+class Employee:
+     company="TechCorp"
+     employee_count=0
+     def __init__ (self,name,department,salary,experience):
+         self.name=name
+         self.department=department
+         self.salary=salary
+         self.experience=experience
+         if salary <0:
+             print("Error")
+         elif experience <0:
+             print("Error")
+         self.employee_count+=1
+         if experience > 5:
+             bonus=salary *0.15
+         elif experience>=3:
+             bonus=salary*0.10
+         else:
+             bonus=salary*0.05
+         final_salary=salary+bonus
+         self.employee_id=Employee.employee_count
+         self.pay_details={
+             "name":name,
+            "salary":salary,
+             "experience":experience,
+             "bonus":bonus,
+             "final_salary":final_salary
+            }
+s1=Employee("sravya","it",59000,3)
+s2=Employee("kavya","cse",75000,2)
+print(s1.__dict__)
+print(s2.__dict__)
