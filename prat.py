@@ -1,5 +1,5 @@
 #Write a function that takes two numbers as input and returns their sum.
-'''def add(a,b):
+def add(a,b):
     sum=a+b
     return sum
 print(add(int(input("enter a number")),int(input("enter a number"))))
@@ -33,7 +33,7 @@ def reverse(text):
     for char in text:
         reversed_text=char+reversed_text
     return reversed_text
-print(reverse("nithin"))'''
+print(reverse("nithin"))
 
 ''' 1.Given a list of product prices, write a program to filter prices above ₹500, then apply a 10% discount using
  map(), and compute the final total bill using reduce().'''
