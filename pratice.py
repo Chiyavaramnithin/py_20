@@ -66,7 +66,7 @@ print(average(10,20,30))
 """create a python application with 3 functions first fun name total with 3 parameters of 3 sub marks
 avg func
 grade that takes avg as input and if avg is greater than 85 perc return a grade if avg is abv 75 perc return b grade
-if avg is 75 to 65 return c grade 50 percent to 65 return d grade , else retun fail call it in a single line" !!"""
+if avg is 75 to 65 return c grade 50 percent to 65 return d grade , else return fail call it in a single line" !!"""
 def grade(avg):
     if avg>=85:
         return "A"
