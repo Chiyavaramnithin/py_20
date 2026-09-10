@@ -139,7 +139,7 @@ class A:
             print(name)
         else:
             print("Invalid")
-p=A()
+s=A()
 
 class A:
     def m1(self):
