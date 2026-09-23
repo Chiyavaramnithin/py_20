@@ -64,7 +64,7 @@ twenty_to_hundred = Numbers(20, 100)
 #     print(i)
 
 class Fibonacci:
-    def __init__(self, n):
+    def ddddddd__init__(self, n):
         self.count = 1
         self.n = n
         self.a , self.b = 0, 1
@@ -112,12 +112,12 @@ class A:
 class B(A):
     def __init__(self, x , y):
         self.y = y
-        # A.__init__(self, x)
+        A.__init__(self, x)
         super().__init__(x)
 class C(B):
     def __init__(self, x, y , z):
         self.z = z
-        # B.__init__(self, x, y)
+         B.__init__(self, x, y)
         super().__init__(x, y)
 c = C(10, 20 , 30)
 print("x: ",c.x)
