@@ -123,3 +123,82 @@ c = C(10, 20 , 30)
 print("x: ",c.x)
 print("y :",c.y)
 print("z :" ,c.z)
+# Create a Bank class with:
+# • balance variable
+# • deposit()
+# • withdraw()
+# • check_balance()
+# Create a User class that inherits Bank and displays the user's name. Perform
+# deposit, withdrawal, and balance check.
+
+class Bank:
+    def __init__(self, balance):
+        self.balance = balance
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Dear {self.name},\nYour account has been credited with Rs.{amount} successfully.")
+    def withdraw(self, amount):
+        self.balance -= amount
+        print(f"Dear {self.name},\nYour account has been debited with Rs.{amount} successfully.")
+    def check_balance(self):
+        print(f"Dear {self.name},\nYour current available balance is Rs.{self.balance}.")
+
+class User(Bank):
+    def __init__(self, name, balance):
+        self.name = name
+#         super().__init__(balance)
+# user1 = User("John", 10000)
+# user2 = User("Alice", 120000)
+# print(user1.__dict__)
+# print(user2.__dict__)
+# print(user1.name)
+# print(user2.name)
+# user1.deposit(5000)
+# user1.check_balance()
+# user2.withdraw(2000)
+# user2.deposit(10000)
+# user2.check_balance()
+
+# Create an Employee class with:
+# • emp_name
+# • salary
+# • display_details()
+# Create a Manager class that inherits Employee and adds a bonus(). Display the
+# total salary.
+class Employee:
+    def __init__(self, emp_name, salary):
+        self.emp_name = emp_name
+        self.salary = salary
+    def display_details(self):
+        print(f"Employee Name: {self.emp_name}, Salary: {self.salary}")
+
+class Manager(Employee):
+    def bonus(self):
+        self.salary += self.salary * 0.1
+# alice = Manager("Alice", 15000)
+# alice.display_details()
+# alice.bonus()
+# alice.display_details()
+
+#
+# class A:
+#     def __init__(self):
+#         self.x = 10
+#         self.y = 20
+#         self.z = 30
+#         self.count = 40
+#     def check_even(self, val):
+#         if val % 2 == 0:
+#             print("Even")
+#         else:
+#             print("Odd")
+# class B:
+#     def __init__(self, count):
+#         self.count = count
+#     def m1(self):
+#         obj = A()
+#         obj.check_even(self.count)
+# b = B(100)
+# print(b.count)
+# b.m1()
+# print(b.count)
