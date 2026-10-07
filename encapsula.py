@@ -1,7 +1,5 @@
 #Encapsulation Questions
 
-
-
 class Bank:
     def __init__(self, balance):
         self.__balance = balance
