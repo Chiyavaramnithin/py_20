@@ -108,3 +108,31 @@ person1.full_name = "Jane Doe"
 print(person1.first_name)
 print(person1.last_name)
 print(person1.full_name)
+
+from abc import ABC, abstractmethod
+
+class Whatsapp(ABC):
+    @abstractmethod
+    def send(self):
+        pass
+
+class SendPhoto(Whatsapp):
+    def send(self):
+        print("Compressing the photo...")
+        print("Encrypting Photo...")
+        print("Sending the photo...")
+        print("Decrypting the photo...")
+        print("Photo sent!")
+
+class SendText(Whatsapp):
+    def send(self):
+        print("Checking character limit..")
+        print("Encrypting the message...")
+        print("Sending the message..")
+        print("Decrypting the message...")
+        print("Message sent!!")
+
+message1 = SendText()
+image1 = SendPhoto()
+message1.send()
+image1.send()
