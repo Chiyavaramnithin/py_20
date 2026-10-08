@@ -81,9 +81,9 @@ class Fibonacci:
         else:
             raise StopIteration
 five = Fibonacci(5)
-# for i in five:
-#     print(i)
-#
+for i in five:
+    print(i)
+
 ten = Fibonacci(10)
 for i in ten:
     print(i)
@@ -97,7 +97,7 @@ class B(A):
     c3 = True
     def __init__(self, z, x, y):
         self.z = z
-        # A.__init__(self,x, y)
+        A.__init__(self,x, y)
         super().__init__(x, y)
 b = B(10, 20, 30)
 print(b.c1)
@@ -117,7 +117,7 @@ class B(A):
 class C(B):
     def __init__(self, x, y , z):
         self.z = z
-         B.__init__(self, x, y)
+        B.__init__(self, x, y)
         super().__init__(x, y)
 c = C(10, 20 , 30)
 print("x: ",c.x)
@@ -146,18 +146,18 @@ class Bank:
 class User(Bank):
     def __init__(self, name, balance):
         self.name = name
-#         super().__init__(balance)
-# user1 = User("John", 10000)
-# user2 = User("Alice", 120000)
-# print(user1.__dict__)
-# print(user2.__dict__)
-# print(user1.name)
-# print(user2.name)
-# user1.deposit(5000)
-# user1.check_balance()
-# user2.withdraw(2000)
-# user2.deposit(10000)
-# user2.check_balance()
+        super().__init__(balance)
+user1 = User("John", 10000)
+user2 = User("Alice", 120000)
+print(user1.__dict__)
+print(user2.__dict__)
+print(user1.name)
+print(user2.name)
+user1.deposit(5000)
+user1.check_balance()
+user2.withdraw(2000)
+user2.deposit(10000)
+user2.check_balance()
 
 # Create an Employee class with:
 # • emp_name
@@ -175,10 +175,10 @@ class Employee:
 class Manager(Employee):
     def bonus(self):
         self.salary += self.salary * 0.1
-# alice = Manager("Alice", 15000)
-# alice.display_details()
-# alice.bonus()
-# alice.display_details()
+alice = Manager("Alice", 15000)
+alice.display_details()
+alice.bonus()
+alice.display_details()
 
 
 class A:
