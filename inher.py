@@ -180,25 +180,25 @@ class Manager(Employee):
 # alice.bonus()
 # alice.display_details()
 
-#
-# class A:
-#     def __init__(self):
-#         self.x = 10
-#         self.y = 20
-#         self.z = 30
-#         self.count = 40
-#     def check_even(self, val):
-#         if val % 2 == 0:
-#             print("Even")
-#         else:
-#             print("Odd")
-# class B:
-#     def __init__(self, count):
-#         self.count = count
-#     def m1(self):
-#         obj = A()
-#         obj.check_even(self.count)
-# b = B(100)
-# print(b.count)
-# b.m1()
-# print(b.count)
+
+class A:
+    def __init__(self):
+        self.x = 10
+        self.y = 20
+        self.z = 30
+        self.count = 40
+    def check_even(self, val):
+        if val % 2 == 0:
+            print("Even")
+        else:
+            print("Odd")
+class B:
+    def __init__(self, count):
+        self.count = count
+    def m1(self):
+        obj = A()
+        obj.check_even(self.count)
+b = B(100)
+print(b.count)
+b.m1()
+print(b.count)
