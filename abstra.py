@@ -4,7 +4,6 @@ class Whatsapp(ABC):
     @abstractmethod
     def send(self):
         pass
-
 class SendPhoto(Whatsapp):
     def send(self):
         print("Compressing the photo...")
@@ -12,7 +11,6 @@ class SendPhoto(Whatsapp):
         print("Sending the photo...")
         print("Decrypting the photo...")
         print("Photo sent!")
-
 class SendText(Whatsapp):
     def send(self):
         print("Checking character limit..")
