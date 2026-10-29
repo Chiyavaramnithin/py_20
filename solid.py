@@ -75,3 +75,15 @@ play_content(Series("alice123", 123, Desktop()))
 play_content(Documentary("alice123", 123, TV()))
 play_content(Trailer("alice123", 123, Tablet()))
 movie.download()
+
+# Design a banking system with: • An abstract base class Account with deposit(), withdraw(), calculate_interest().
+# • Subclasses: SavingsAccount, CurrentAccount, FixedDepositAccount.
+# • Each account must: o Encapsulate balance (private)
+# o Provide controlled access through properties
+# o Override interest calculation differently
+# • Include a static method to validate amount.
+# • Include a class method to update bank-wide interest policies.
+
+from abc import ABC, abstractmethod
+class banking_system(ABC):
+    def __init__(self,):
