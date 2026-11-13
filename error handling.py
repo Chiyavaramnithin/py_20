@@ -32,3 +32,19 @@ class voter:
 p=input()
 p1=voter(int(p))
 print(p1.age)
+
+# Create a class LoginSystem with a method login(password) that raises an exception for an incorrect password and
+# handles the exception outside the class.
+class LoginSystem:
+    def __init__(self,password="nithin"):
+        self.password=password
+    def login(self,pas):
+        if pas!=self.password:
+            raise ValueError("incorrect password")
+        print("login successful")
+system=LoginSystem()
+p=input()
+try:
+    system.login(p)
+except ValueError as e:
+    print(e)
