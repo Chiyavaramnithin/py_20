@@ -20,3 +20,15 @@ class Student:
 p=input()
 p1=Student(int(p))
 print(p1.marks)
+
+# Create a custom exception named InvalidAgeError. Create a class Voter with a method check_eligibility(age) that
+# raises this exception if age is less than 18.
+
+class voter:
+    def __init__(self,age=int):
+        if age<18:
+            raise ValueError("age is less than 18")
+        self.age=age
+p=input()
+p1=voter(int(p))
+print(p1.age)
